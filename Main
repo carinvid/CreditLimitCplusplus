@@ -1,0 +1,64 @@
+#include "pch.h"
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Customer
+
+{
+private:
+	int id_num;
+	string last_name;
+	string first_name;
+	double credit_limit;
+
+public:
+	void setIdNum(int);
+	void setLastname(string);
+	void setFirstname(string);
+	void setCredit(double);
+	void displayCustomer();
+
+};
+
+void Customer::setIdNum(int id)
+{
+	id_num = id;
+}
+void Customer::setLastname(string last)
+{
+	last_name = last;
+}
+void Customer::setFirstname(string first)
+{
+	first_name = first;
+}
+void Customer::setCredit(double limit)
+{
+	const double MAX = 10000;
+	if (limit <= MAX)
+		credit_limit = limit;
+	else
+		credit_limit = MAX;
+}
+void Customer::displayCustomer()
+{
+	cout << "Id #" << id_num << endl;
+	cout << "Name: " << first_name << " " << last_name << endl;
+	cout << "Credit limit: $" << credit_limit << endl;
+}
+
+int main()
+
+{
+	Customer myCustomer;
+	myCustomer.setIdNum(2012);
+	myCustomer.setLastname("Mercury");
+	myCustomer.setFirstname("Freddy");
+	myCustomer.setCredit(15000);
+	myCustomer.displayCustomer();
+	return 0;
+
+}
+
